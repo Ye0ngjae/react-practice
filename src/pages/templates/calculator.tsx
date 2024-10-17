@@ -93,7 +93,13 @@ function tokenize(expression: string[]): (number | string)[] {
 }
 
 function infixToPostfix(tokens: (number | string)[]): (number | string)[] {
-    const precedence: { [key: string]: number } = { '+': 1, '-': 1, '*': 2, '/': 2 };
+    const precedence: { [key: string]: number } = { 
+        '+': 1, 
+        '-': 1, 
+        '*': 2, 
+        '/': 2,
+        "%": 2
+    };
     const output: (number | string)[] = [];
     const operatorStack: string[] = [];
 
@@ -153,6 +159,7 @@ function evaluateExpressionTree(node: TreeNode): number {
         case '/':
             if (right === 0) throw new Error("Division by zero");
             return left / right;
+        case "%":return left % right;
         default:
             throw new Error(`Unknown operator: ${node.value}`);
     }

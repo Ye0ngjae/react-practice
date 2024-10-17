@@ -19,7 +19,7 @@ export default function Numpad({onButtonClick}: {onButtonClick: (value:string) =
                 <Button value="4" Onclick={onButtonClick}/>
                 <Button value="5" Onclick={onButtonClick}/>
                 <Button value="6" Onclick={onButtonClick}/>
-                <button disabled></button>
+                <Button value="%" Onclick={onButtonClick}/>
             </div>
             <div className="row-board">
                 <Button value="1" Onclick={onButtonClick}/>
